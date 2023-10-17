@@ -1,9 +1,19 @@
 #!/bin/bash
 
+# Check if wget is installed
+if ! command -v wget &> /dev/null; then
+    echo "wget is not installed. Please install it and run the script again."
+    exit 1
+fi
+
 # Function to download a file from GitHub
 download_file () {
-  wget -O "$2" "$1"
+  wget -O "$2" "$1" || { echo "Error downloading $1"; exit 1; }
 }
+
+# Install required Python packages if not installed
+python3 -c "import selenium" 2>/dev/null || pip3 install selenium
+python3 -c "import bs4" 2>/dev/null || pip3 install beautifulsoup4
 
 # Get the current directory
 current_directory=$(pwd)
