@@ -1,32 +1,48 @@
+
 # FlightAware Contribution Monitor
-Script to discover how much of your ADSB receiver data FlightAware are actually using
 
-**Purpose**
-By running this application, you get a detailed insight into your ADS-B contributions to FlightAware, conveniently processed and summarized for you. 
-This could be valuable for tracking your contribution performance over time or for troubleshooting any issues with your ADS-B setup.
+Script to discover how much of your ADSB receiver data FlightAware are actually using.
 
-**Installation:**
+## Purpose
 
-1) ```wget https://raw.githubusercontent.com/yanniedog/flightaware-contribution/main/install-fa-tracklog-contribution.sh```
-2) ```chmod +x install-fa-tracklog-contribution.sh```
-3) ```./install-fa-tracklog-contribution.sh```
+By running this application, you get detailed insight into your ADS-B contributions to FlightAware. This is valuable for tracking performance and troubleshooting issues.
 
+## Overview
 
-**Overview**
 The application comprises seven main components:
 
-- Configuration File (config.me): Contains key-value pairs for settings like your FlightAware username.
-- Startup Script (start.sh): Shell script that initiates the application and orchestrates the Python scripts.
-- FA Stats (step1-fa-stats-page.py): Scrapes statistics from FlightAware.
-- Download Tracklogs (step2-download-tracklog-htmls.py): Downloads track logs in HTML format.
-- Scrape Local HTMLs (step3-scrape-local-htmls.py): Parses downloaded HTML track logs.
-- Build Final Report (step4-build-final-report.py): Compiles gathered data into a final report.
-- Erase Temp Files (step5-erase-temp-files.py): Deletes temporary files created during the process.
+- **Configuration File (config.me)**: Contains settings like FlightAware username.
+- **Startup Script (start.sh)**: Initiates the application and runs the Python scripts.
+- **FA Stats (step1-fa-stats-page.py)**: Scrapes statistics from FlightAware.
+- **Download Tracklogs (step2-download-tracklog-htmls.py)**: Downloads track logs.
+- **Scrape Local HTMLs (step3-scrape-local-htmls.py)**: Parses downloaded HTML track logs.
+- **Build Final Report (step4-build-final-report.py)**: Compiles data into a final report.
+- **Erase Temp Files (step5-erase-temp-files.py)**: Deletes temporary files.
 
-**Compatibility:**
+## Compatibility
+
 - Python 3.x
 - Selenium WebDriver
-- Additional Python libraries as specified in each Python script (e.g., requests, csv, re)
+- Additional Python libraries (e.g., requests, csv, re)
 - FlightAware account
+(Note: This has only been tested on a Raspberry Pi 4B+ running Raspian OS)
 
-_Note: This has only been tested on a Raspberry Pi 4B+ running Raspbian OS_
+## Installation
+
+1) `wget https://raw.githubusercontent.com/yanniedog/flightaware-contribution/main/install-fa-tracklog-contribution.sh`
+2) `chmod +x install-fa-tracklog-contribution.sh`
+3) `./install-fa-tracklog-contribution.sh`
+
+## Configuration
+
+1. Open `config.me` in a text editor.
+2. Edit the settings to match your FlightAware username and other necessary parameters.
+
+## Usage
+
+1. Open a terminal window.
+2. Navigate to the application directory.
+3. Make `start.sh` executable if it isn't: `chmod +x start.sh`.
+4. Run `start.sh` to initiate the application: `./start.sh`.
+
+_Note: Tested only on Raspberry Pi 4B+ with Raspbian OS._
