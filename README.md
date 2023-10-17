@@ -1,3 +1,4 @@
+![Screenshot 2023-10-17 182026](https://github.com/yanniedog/flightaware-contribution/assets/25560742/1f66cb99-30fa-41ad-b269-5e198fd434fd)
 
 # FlightAware Contribution Monitor
 
