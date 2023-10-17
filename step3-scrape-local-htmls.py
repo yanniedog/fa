@@ -39,7 +39,7 @@ def extract_data(h, f, rep_fac, icao_to_iata_map):
     date = reformat_date(original_date)
 
     # Locate and extract the TZ value from the HTML
-    tz_element = s.find('h4', text='Times and Time Zones')
+    tz_element = s.find('h4', string='Times and Time Zones')
     tz = ""
     if tz_element:
         tz_text = tz_element.find_next('p', class_='indent').text
