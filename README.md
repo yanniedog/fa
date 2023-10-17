@@ -1,4 +1,4 @@
-# flightaware-contribution
+# FlightAware Contribution Monitor
 Script to discover how much of your ADSB receiver data FlightAware are actually using
 
 **Purpose**
