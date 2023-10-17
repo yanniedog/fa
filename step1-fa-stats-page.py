@@ -33,7 +33,7 @@ chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-shm-usage")
 
 def scrape_data():
-    driver = webdriver.Chrome(options=chrome_options)
+    driver = webdriver.Chrome(executable_path='/usr/lib/chromium-browser/chromedriver', options=chrome_options)
     driver.get(f"https://flightaware.com/adsb/stats/user/{username}")
 
     # Continue with the scraping process
