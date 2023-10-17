@@ -5,8 +5,6 @@ echo "FlightAware ADS-B contribution monitor has been launched"
 
 # Filename: start.sh
 # Run this script to start the application
-# Both "start.sh" and "config.me" must be located within the "installation_directory" field of "config.me"
-# The following scripts must be located in a subdirectory called [installation_directory]/backend
 
 # Specify the name of the configuration file
 config_file="config.me"
@@ -27,6 +25,14 @@ temp_folder="$installation_directory/temp"
 # Check if the temp folder exists, and create it if not
 if [ ! -d "$temp_folder" ]; then
   mkdir -p "$temp_folder"
+fi
+
+# Create a variable for the airport-library folder
+airport_library_folder="$installation_directory/backend/airport-library"
+
+# Check if the airport-library folder exists, and create it if not
+if [ ! -d "$airport_library_folder" ]; then
+  mkdir -p "$airport_library_folder"
 fi
 
 # Check if the icao2iata.csv file exists, and download it if not
