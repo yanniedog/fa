@@ -17,11 +17,7 @@ sudo apt install -y python3-selenium python3-bs4 unzip
 
 # Check if ChromeDriver is already installed
 if ! command -v chromedriver &> /dev/null; then
-    echo "Installing ChromeDriver..."
-    wget https://chromedriver.storage.googleapis.com/2.36/chromedriver_linux64.zip
-    unzip chromedriver_linux64.zip
-    sudo mv chromedriver /usr/local/bin/
-    sudo chmod +x /usr/local/bin/chromedriver
+sudo apt-get install -y chromium-chromedriver
     echo "ChromeDriver installed."
 else
     echo "ChromeDriver is already installed."
