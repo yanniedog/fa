@@ -46,4 +46,5 @@ The application comprises seven main components:
 4. Run `start.sh` to initiate the application: `./start.sh`.
 
 _Note: Tested only on Raspberry Pi 4B+ with Raspbian OS._
+
 ![Screenshot 2023-10-17 181904](https://github.com/yanniedog/flightaware-contribution/assets/25560742/46a896b9-f407-4c03-8133-592dea17dcba)
