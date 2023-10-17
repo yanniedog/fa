@@ -1,29 +1,43 @@
 #!/bin/bash
 
-# Check if wget is installed
-if ! command -v wget &> /dev/null; then
-    echo "wget is not installed. Please install it and run the script again."
-    exit 1
-fi
-
-# Install ChromeDriver if it's not already installed
-if ! command -v chromedriver &> /dev/null
-then
-    echo "Installing ChromeDriver..."
-    sudo apt-get update
-    sudo apt-get install -y chromedriver
-    echo "ChromeDriver installed."
-fi
-
 # Function to download a file from GitHub
 download_file () {
   wget -O "$2" "$1" || { echo "Error downloading $1"; exit 1; }
 }
 
-# Install required Python packages if not installed
-# Using apt to update and upgrade all packages
+# Update and upgrade the system
 sudo apt update
 sudo apt upgrade -y
+
+# Install required utilities and packages if not already installed
+# Check for wget and install if missing
+if ! command -v wget &> /dev/null; then
+    echo "wget is not installed. Installing..."
+    sudo apt install -y wget
+fi
+
+# Check for unzip and install if missing
+if ! command -v unzip &> /dev/null; then
+    echo "unzip is not installed. Installing..."
+    sudo apt install -y unzip
+fi
+
+# Check for ChromeDriver and install if missing
+if ! command -v chromedriver &> /dev/null; then
+    echo "Installing ChromeDriver..."
+    wget https://github.com/electron/electron/releases/download/v3.0.0/chromedriver-v3.0.0-linux-armv7l.zip
+    unzip chromedriver-v3.0.0-linux-armv7l.zip
+    sudo mv chromedriver /usr/local/bin/
+    rm chromedriver-v3.0.0-linux-armv7l.zip
+    if command -v chromedriver &> /dev/null; then
+        echo "ChromeDriver installed."
+    else
+        echo "ChromeDriver installation failed."
+        exit 1
+    fi
+fi
+
+# Install required Python packages
 sudo apt install -y python3-selenium python3-bs4
 
 # Get the current directory
