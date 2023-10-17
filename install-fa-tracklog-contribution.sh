@@ -10,7 +10,7 @@ sudo apt install -y python3-selenium python3-bs4 unzip
 # Install or update ChromeDriver
 if ! command -v chromedriver &> /dev/null; then
     echo "Installing ChromeDriver..."
-    wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip
+    wget https://chromedriver.storage.googleapis.com/2.36/chromedriver_linux64.zip
     unzip chromedriver_linux64.zip
     sudo mv chromedriver /usr/local/bin/
     sudo chmod +x /usr/local/bin/chromedriver
