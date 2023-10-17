@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# Check if Chromium is installed
+if ! command -v chromium-browser &> /dev/null; then
+    echo "Chromium is not installed. Installing Chromium..."
+    sudo apt install -y chromium-browser
+else
+    echo "Chromium is already installed."
+fi
+
 # Update and upgrade all packages
 sudo apt update
 sudo apt upgrade -y
@@ -7,7 +15,7 @@ sudo apt upgrade -y
 # Install required Python packages if not installed
 sudo apt install -y python3-selenium python3-bs4 unzip
 
-# Install or update ChromeDriver
+# Check if ChromeDriver is already installed
 if ! command -v chromedriver &> /dev/null; then
     echo "Installing ChromeDriver..."
     wget https://chromedriver.storage.googleapis.com/2.36/chromedriver_linux64.zip
