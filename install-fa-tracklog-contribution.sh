@@ -24,7 +24,7 @@ current_directory=$(pwd)
 default_installation_directory="$current_directory/fa-tracklog-contribution"
 
 # Ask user for installation directory (full path)
-read -rp "Please specify the installation_directory [$default_installation_directory]: " installation_directory
+read -rp "Please specify the installation directory, or just press ENTER for default [$default_installation_directory]: " installation_directory
 installation_directory=${installation_directory:-$default_installation_directory}
 
 # Create installation directory if it doesn't exist
