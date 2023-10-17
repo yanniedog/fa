@@ -1,0 +1,23 @@
+# 'username: Your username, exactly as found within the url for your FlightAware Stat's page (eg, https://www.flightaware.com/adsb/stats/user/[username])
+username="SmoothIsland"
+
+# 'reporting_facility: A text string unique to your receiver, located in 'Reporting Facility' column of FlightAware's Tracklog pages.
+# 'reporting_facility: Unfortunately, FA's Tracklog pages frequently change the format of the data in the "Reporting Facility" column
+# 'reporting_facility: Sometimes you'll see data from your receiver represented as "FlightAware ADS-B ([your nearest airport]) / [your username] [your Unique Identifier]
+# 'reporting_facility: Sometimes (eg, if you're not logged in to FlightAware.com) you'll only see "FlightAware ADS-B ([your nearest airport])"
+# 'reporting_facility: Sometimes the Tracklog pages don't show a 'Reporting Facility' column at all (see the "loop_frequency: WARNING" below)
+# 'reporting_facility: Suggested value to use the reporting_facility is the code for your nearest airport, shown in brackets in the "Reporting facility" column, rather than your username or unique identifier. 
+# 'reporting_facility: During testing, using the nearest airport code was found to be a reliable way to identify your own receiver,
+# 'reporting_facility: especially if no other receivers have selected that same airport as their 'nearest' one. 
+# 'reporting_facility: (if you're struggling with this consider configuring FA to set your 'nearest airport' to be an tiny airfield nearby to you that no other nearby receivers select, then use it's code as your "reporting_facility" variable)
+reporting_facility="YLAG"
+
+# 'loop_frequency: The time (in seconds) to pause before doing another full scrape
+# 'loop_frequency: WARNING: If this is set too low, FlightAware throttles you by preventing it's Tracklog pages from displaying a "Reporting Facility" column.
+# 'loop_frequency: This app will malfunction if this occurs.
+# 'loop_frequency: Suggested value for loop_frequency is 60 or higher.
+loop_frequency=60
+
+# 'installation_directory: must be the full path to the folder containing both start.sh and config.me files.
+# 'installation_directory: must contain a subdirectory called 'backend' which contains several essential python scripts.
+installation_directory="/home/pi/fa-tracklog-contribution"
