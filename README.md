@@ -28,4 +28,5 @@ The application comprises seven main components:
 - Selenium WebDriver
 - Additional Python libraries as specified in each Python script (e.g., requests, csv, re)
 - FlightAware account
-Note: This has only been tested on a Raspberry Pi 4B+ running Raspbian OS
+
+_Note: This has only been tested on a Raspberry Pi 4B+ running Raspbian OS_
