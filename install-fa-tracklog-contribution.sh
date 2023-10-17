@@ -5,10 +5,13 @@ download_file () {
   wget -O "$2" "$1"
 }
 
-# Default installation directory
-default_installation_directory="fa-tracklog-contribution"
+# Get the current directory
+current_directory=$(pwd)
 
-# Ask user for installation directory
+# Default installation directory (full path)
+default_installation_directory="$current_directory/fa-tracklog-contribution"
+
+# Ask user for installation directory (full path)
 read -rp "Please specify the installation_directory [$default_installation_directory]: " installation_directory
 installation_directory=${installation_directory:-$default_installation_directory}
 
@@ -47,3 +50,6 @@ echo "Installation completed."
 echo "Please confirm your configuration in $installation_directory/config.me."
 echo "For additional guidance, refer to the usage guide available as remarks in the config.me file."
 echo "After confirming, you can start the application by running 'start.sh' from the $installation_directory directory."
+
+
+
