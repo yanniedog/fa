@@ -15,13 +15,13 @@ This could be valuable for tracking your contribution performance over time or f
 **Overview**
 The application comprises seven main components:
 
-a) Configuration File (config.me): Contains key-value pairs for settings like your FlightAware username.
-b) Startup Script (start.sh): Shell script that initiates the application and orchestrates the Python scripts.
-c) FA Stats (step1-fa-stats-page.py): Scrapes statistics from FlightAware.
-d) Download Tracklogs (step2-download-tracklog-htmls.py): Downloads track logs in HTML format.
-e) Scrape Local HTMLs (step3-scrape-local-htmls.py): Parses downloaded HTML track logs.
-f) Build Final Report (step4-build-final-report.py): Compiles gathered data into a final report.
-g) Erase Temp Files (step5-erase-temp-files.py): Deletes temporary files created during the process.
+- Configuration File (config.me): Contains key-value pairs for settings like your FlightAware username.
+- Startup Script (start.sh): Shell script that initiates the application and orchestrates the Python scripts.
+- FA Stats (step1-fa-stats-page.py): Scrapes statistics from FlightAware.
+- Download Tracklogs (step2-download-tracklog-htmls.py): Downloads track logs in HTML format.
+- Scrape Local HTMLs (step3-scrape-local-htmls.py): Parses downloaded HTML track logs.
+- Build Final Report (step4-build-final-report.py): Compiles gathered data into a final report.
+- Erase Temp Files (step5-erase-temp-files.py): Deletes temporary files created during the process.
 
 **Compatibility:**
 - Python 3.x
