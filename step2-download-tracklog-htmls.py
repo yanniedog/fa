@@ -55,7 +55,7 @@ def scrape_and_save_tracklog_html():
         tracklog_urls = f.readlines()
 
     for url in tracklog_urls:
-        driver = webdriver.Chrome(options=chrome_options)
+        driver = webdriver.Chrome(executable_path='/usr/lib/chromium-browser/chromedriver', options=chrome_options)
         driver.get(url.strip())  # Remove any leading/trailing whitespace or newlines
 
         # Extract the flight code from the URL
