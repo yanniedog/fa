@@ -12,8 +12,10 @@ download_file () {
 }
 
 # Install required Python packages if not installed
-python3 -c "import selenium" 2>/dev/null || pip3 install selenium
-python3 -c "import bs4" 2>/dev/null || pip3 install beautifulsoup4
+# Using apt to update and upgrade all packages
+sudo apt update
+sudo apt upgrade -y
+sudo apt install -y python3-selenium python3-bs4
 
 # Get the current directory
 current_directory=$(pwd)
