@@ -6,6 +6,15 @@ if ! command -v wget &> /dev/null; then
     exit 1
 fi
 
+# Install ChromeDriver if it's not already installed
+if ! command -v chromedriver &> /dev/null
+then
+    echo "Installing ChromeDriver..."
+    sudo apt-get update
+    sudo apt-get install -y chromedriver
+    echo "ChromeDriver installed."
+fi
+
 # Function to download a file from GitHub
 download_file () {
   wget -O "$2" "$1" || { echo "Error downloading $1"; exit 1; }
