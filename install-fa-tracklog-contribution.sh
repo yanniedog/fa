@@ -70,6 +70,10 @@ sed -i "s|reporting_facility=\".*\"|reporting_facility=\"$reporting_facility\"|g
 echo "receiver_latitude=\"$receiver_latitude\"" >> "$installation_directory/config.me"
 echo "receiver_longitude=\"$receiver_longitude\"" >> "$installation_directory/config.me"
 
+# Add the installation directory to the PATH
+echo "export PATH=\$PATH:$installation_directory" >> ~/.bashrc
+source ~/.bashrc
+
 # Final messages
 echo "Installation completed."
 echo "Please confirm your configuration in $installation_directory/config.me."
