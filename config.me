@@ -15,9 +15,12 @@ reporting_facility="YLAG"
 # 'loop_frequency: The time (in seconds) to pause before doing another full scrape
 # 'loop_frequency: WARNING: If this is set too low, FlightAware throttles you by preventing it's Tracklog pages from displaying a "Reporting Facility" column.
 # 'loop_frequency: This app will malfunction if this occurs.
-# 'loop_frequency: Suggested value for loop_frequency is 60 or higher.
-loop_frequency=60
+# 'loop_frequency: Suggested value for loop_frequency is 100 or higher.
+loop_frequency=100
 
-# 'installation_directory: must be the full path to the folder containing both start.sh and config.me files.
-# 'installation_directory: must contain a subdirectory called 'backend' which contains several essential python scripts.
-installation_directory="/home/pi/fa-tracklog-contribution"
+# receiver_latitude: Latitude of your ADSB receiver in decimal format
+# receiver_longitude: Longitude of your ADSB receiver in decimal format
+# Example values are -42.8361 for latitude and 147.5100 for longitude (coordinates for Hobart Airport, Tasmania)
+receiver_latitude = -0.0
+receiver_longitude = 0.0
+
