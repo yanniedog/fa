@@ -49,7 +49,7 @@ def main():
                     all_rows.append(row) if row not in all_rows else None
 
     if tz is None:
-        print("Error: Time zone ('tz') could not be determined from the tracklog CSVs.")
+        print("Note: Time zone ('tz') could not be determined from the tracklog CSVs. This will occur if the current cycle didn't add any new tracklog positions to your report.")
         return
 
     if all_rows:
