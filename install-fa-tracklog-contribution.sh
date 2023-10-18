@@ -17,21 +17,17 @@ sudo apt install -y python3-selenium python3-bs4 unzip
 
 # Check if ChromeDriver is already installed
 if ! command -v chromedriver &> /dev/null; then
-sudo apt-get install -y chromium-chromedriver
+    sudo apt-get install -y chromium-chromedriver
     echo "ChromeDriver installed."
 else
     echo "ChromeDriver is already installed."
 fi
 
-# Get the current directory
-current_directory=$(pwd)
+# Ask user for installation subdirectory
+read -rp "Please specify the installation subdirectory under /home/pi/: " install_subdirectory
 
-# Default installation directory (full path)
-default_installation_directory="$current_directory/fa-tracklog-contribution"
-
-# Ask user for installation directory (full path)
-read -rp "Please specify the installation directory, or just press ENTER for default [$default_installation_directory]: " installation_directory
-installation_directory=${installation_directory:-$default_installation_directory}
+# Full installation directory
+installation_directory="/home/pi/$install_subdirectory"
 
 # Create required directories
 mkdir -p "$installation_directory/backend"
