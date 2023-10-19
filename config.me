@@ -1,5 +1,11 @@
-# 'username: Your username, exactly as found within the url for your FlightAware Stat's page (eg, https://www.flightaware.com/adsb/stats/user/[username])
-username="SmoothIsland"
+# 'username: Your username, exactly as found within the url for your FlightAware Stat's page by entering the context in brackets: https://www.flightaware.com/adsb/stats/user/[USERNAME]
+# If you have multiple recievers, you can set this application to monitor your specific site (eg, https://www.flightaware.com/adsb/stats/user/[USERNAME#stats-SITENUMBER].
+# If you want to do this, simply enter your "USERNAME#stats-SITENUMBER" below
+username="SmoothIsland#stats-177844"
+
+# 'installation_directory: must be the full path to the folder containing both start.sh and config.me files.
+# 'installation_directory: must contain a subdirectory called 'backend' which contains several essential python scripts.
+installation_directory="/home/pi/flightaware-contribution"
 
 # 'reporting_facility: A text string unique to your receiver, located in 'Reporting Facility' column of FlightAware's Tracklog pages.
 # 'reporting_facility: Unfortunately, FA's Tracklog pages frequently change the format of the data in the "Reporting Facility" column
@@ -18,6 +24,7 @@ reporting_facility="YLAG"
 # 'loop_frequency: Suggested value for loop_frequency is 60 or higher.
 loop_frequency=60
 
-# 'installation_directory: must be the full path to the folder containing both start.sh and config.me files.
-# 'installation_directory: must contain a subdirectory called 'backend' which contains several essential python scripts.
-installation_directory="/home/pi/fa-tracklog-contribution"
+# 'cleanup_delay: The time (in seconds) to wait before erasing temporary files.
+# 'cleanup_delay: Set this value to control how long the script waits before cleaning up temporary files.
+# 'cleanup_delay: If not specified, the default cleanup delay is 60 seconds.
+cleanup_delay = 60  # Set the cleanup delay to 60 seconds
