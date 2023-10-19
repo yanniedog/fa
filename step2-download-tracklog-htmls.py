@@ -67,7 +67,7 @@ def scrape_and_save_tracklog_html():
         file_name = f"tracklog - {flight_code} - {datetime.datetime.now().strftime('%Y%m%d')}.html"
         file_path = os.path.join(output_dir, file_name)
 
-        with open(file_path, 'w') as file:
+        with open(file_path, 'w', encoding='utf-8') as file:
             file.write(driver.page_source)
 
         print(f"Saved {file_name}")
