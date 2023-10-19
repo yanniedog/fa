@@ -19,13 +19,17 @@ The application comprises seven main components:
 - **Build Final Report (step4-build-final-report.py)**: Compiles data into a final report.
 - **Erase Temp Files (step5-erase-temp-files.py)**: Deletes temporary files.
 
-## Compatibility
+## Requirements
+- Raspberry Pi4 running Raspbian OS
+- FlightAware ADSB account
 
+## Dependencies (automatically installed)
+- sudo apt update && sudo apt upgrade
 - Python 3.x
 - Selenium WebDriver
+- BeautifulSoup
 - Additional Python libraries (e.g., requests, csv, re)
-- FlightAware account
-(Note: This has only been tested on a Raspberry Pi 4B+ running Raspian OS)
+- sudo apt update
 
 ## Installation
 
@@ -45,6 +49,8 @@ The application comprises seven main components:
 3. Make `start.sh` executable if it isn't: `chmod +x start.sh`.
 4. Run `start.sh` to initiate the application: `./start.sh`.
 
-_Note: Tested only on Raspberry Pi 4B+ with Raspbian OS._
+## Uninstallation
+- Delete the installation directory (rm -r /home/pi/{installation directory}
+- Delete installation script file
 
 ![Screenshot 2023-10-17 181904](https://github.com/yanniedog/flightaware-contribution/assets/25560742/46a896b9-f407-4c03-8133-592dea17dcba)
