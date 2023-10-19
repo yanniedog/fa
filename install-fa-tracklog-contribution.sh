@@ -24,10 +24,10 @@ else
 fi
 
 # Ask user for installation subdirectory
-read -rp "Please specify the installation subdirectory under /home/pi/: " install_subdirectory
+read -rp "Please specify the installation subdirectory under $HOME/: " installation_subdirectory
 
 # Full installation directory
-installation_directory="/home/pi/$install_subdirectory"
+installation_directory="$HOME/$installation_subdirectory"
 
 # Create required directories
 mkdir -p "$installation_directory/backend"
