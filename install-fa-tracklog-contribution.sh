@@ -62,5 +62,4 @@ sed -i "s|installation_directory=\".*\"|installation_directory=\"$installation_d
 echo "Installation completed."
 echo "Please confirm your configuration in $installation_directory/config.me."
 echo "For additional guidance, refer to the usage guide available as remarks in the config.me file."
-echo "To launch the application, navigate to the installation directory and run start.sh:"
-echo "cd $installation_directory && ./start.sh"
+echo "To launch the application, please navigate to $installation_directory and run ./start.sh"
