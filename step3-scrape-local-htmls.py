@@ -107,7 +107,7 @@ def main():
                 continue
             csv_filename = f.replace('.html', '.csv')
             try:
-                with open(os.path.join(temp_dir, csv_filename), 'w', newline='') as csvfile:
+                with open(os.path.join(temp_dir, csv_filename), 'w', newline='', encoding='utf-8') as csvfile:
                     fieldnames = ['Date', 'Time', 'Flight Code', 'Dep', 'Arr', 'Latitude', 'Longitude', 'Course', 'kts', 'km/h', 'Alt(m)', 'Vert rate', 'Reporting Facility', 'URL']
                     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
                     writer.writeheader()
